@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+html.dark body {
+  background-color: var(--color-bg-dark);
+}
+
+@theme {
+  --color-primary: hsl(220, 98%, 61%);
+  --color--gradient-primary: linear-gradient(
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+  --font-josefin: "Josefin Sans", sans-serif;
+  /* Light theme colors */
+  --color-purple-300: hsl(234, 39%, 85%);
+  --color-navy-850: hsl(235, 19%, 35%);
+  --color-gray-300: hsl(233, 11%, 84%);
+  --color-gray-600: hsl(236, 9%, 61%);
+  --color-gray-50: hsl(0, 0%, 98%);
+
+  /* Dark theme colors */
+  --color-dark-primary: hsl(235, 24%, 19%);
+  --color-bg-dark: hsl(235, 21%, 11%);
+  --color-dark-hover: hsl(236, 33%, 92%);
+  --color-navy-950: hsl(235, 21%, 11%);
+  --color-navy-900: hsl(235, 24%, 19%);
+  --color-purple-600: hsl(235, 16%, 43%);
+  --color-purple-700: hsl(233, 14%, 35%);
+  --color-purple-800: hsl(237, 14%, 26%);
+  --color-gray-600: hsl(236, 9%, 61%);
+}
+
+@components {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  @layer components {
+    .dragging {
+      @apply opacity-100 shadow-lg z-10;
+    }
+  }
+}
+@layer base {
+  input[type="checkbox"] {
+    box-sizing: border-box;
+    position: relative;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    padding: 0;
+    border: 1px solid gray;
+    appearance: none;
+    background-color: transparent;
+  }
+  input {
+    caret-color: hsl(220, 98%, 61%);
+  }
+  input[type="checkbox"]:checked {
+    background: url(/src/assets/images/icon-check.svg),
+      linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
