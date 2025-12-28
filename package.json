@@ -1,6 +1,7 @@
 {
   "name": "react-todoapp",
   "private": true,
+  "homepage": "https://ralphdany.github.io/FrontendMentorTodo/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
